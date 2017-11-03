@@ -11,10 +11,12 @@ public class Data {
 
     @SerializedName("Temperature") @Expose String temperature;
     @SerializedName("Humidity") @Expose String humidity;
+    @SerializedName("Time") @Expose String time;
 
-    public Data(String temperature, String humidity) {
+    public Data(String temperature, String humidity, String time) {
         this.temperature = temperature;
         this.humidity = humidity;
+        this.time = time;
     }
 
     public String getTemperature() {
@@ -31,5 +33,13 @@ public class Data {
 
     public void setHumidity(String humidity) {
         this.humidity = humidity;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

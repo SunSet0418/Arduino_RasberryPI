@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final TextView temperature = (TextView) findViewById(R.id.temperature);
         final TextView humidity = (TextView) findViewById(R.id.humidity);
+        final TextView time = (TextView) findViewById(R.id.time);
         TimerTask tt = new TimerTask() {
             @Override
             public void run() {
@@ -44,11 +45,14 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(Call<Data> call, Response<Data> response) {
                         temperature.setText(response.body().getTemperature()+"℃");
                         humidity.setText(response.body().getHumidity()+"%");
+                        time.setText(response.body().getTime());
                     }
 
                     @Override
                     public void onFailure(Call<Data> call, Throwable t) {
-
+                        temperature.setText("Server Error");
+                        humidity.setText("Server Error");
+                        time.setText("Server Error");
                     }
                 });
             }

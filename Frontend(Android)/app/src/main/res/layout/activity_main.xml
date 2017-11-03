@@ -65,6 +65,30 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:text="소음"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:id="@+id/sound"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="2"
+        android:weightSum="5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:text="서버시간"
             android:gravity="center"
             android:layout_height="match_parent"
@@ -79,7 +103,6 @@
             />
 
     </LinearLayout>
-
 
 
 </LinearLayout>

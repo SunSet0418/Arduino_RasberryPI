@@ -15,7 +15,7 @@ import retrofit2.http.Query;
 
 public interface RetrofitJava {
 
-    String Baseurl = "http://soylatte.kr:10000";
+    String Baseurl = "http://192.168.219.115:10000";
 
     @POST("/data")
     Call<Data> getdata();

@@ -3,6 +3,7 @@ package kr.soylatte.arduino;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView temperature = (TextView) findViewById(R.id.temperature);
         final TextView humidity = (TextView) findViewById(R.id.humidity);
         final TextView time = (TextView) findViewById(R.id.time);
+        final TextView sound = (TextView) findViewById(R.id.sound);
         TimerTask tt = new TimerTask() {
             @Override
             public void run() {
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                         temperature.setText(response.body().getTemperature()+"℃");
                         humidity.setText(response.body().getHumidity()+"%");
                         time.setText(response.body().getTime());
+                        sound.setText(response.body().getSound());
                     }
 
                     @Override
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         temperature.setText("Server Error");
                         humidity.setText("Server Error");
                         time.setText("Server Error");
+                        sound.setText("Server Error");
                     }
                 });
             }
